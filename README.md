@@ -34,6 +34,7 @@ This project uses many tools and demonstrates modern React development patterns:
 - **Import ordering** - Automatic import organization
 - **Path aliases** - Clean imports using `@/` syntax
 - **Type checking** - Strict TypeScript configuration
+- **TypeScript configs** - All configuration files use TypeScript for type safety
 - **Pre-commit hooks** - Code quality enforcement
 
 ### Package Management
@@ -52,6 +53,7 @@ This project uses many tools and demonstrates modern React development patterns:
 - ESLint 9 with modern flat configuration
 - Automatic import sorting and organization
 - TypeScript strict mode with comprehensive typing
+- TypeScript-based configuration files with IntelliSense support
 - Hot module replacement for fast development
 
 ## Getting Started
@@ -192,10 +194,13 @@ const classes = cn(
 
 ## Configuration Files
 
-- `eslint.config.mjs` - ESLint 9 flat configuration
+All configuration files use TypeScript extensions for better type safety and IDE support:
+
+- `eslint.config.ts` - ESLint 9 flat configuration with TypeScript support
 - `playwright.config.ts` - E2E testing configuration
 - `vitest.config.ts` - Unit testing configuration
-- `tailwind.config.mjs` - Tailwind CSS configuration
+- `vite.config.ts` - Vite build configuration
+- `tailwind.config.ts` - Tailwind CSS configuration with type safety
 - `tsconfig.json` - TypeScript configuration with path aliases
 
 ## License
