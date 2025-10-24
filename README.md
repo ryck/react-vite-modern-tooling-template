@@ -30,6 +30,8 @@ This project uses many tools and demonstrates modern React development patterns:
 ### Code Quality & DX
 
 - [ESLint 9](https://eslint.org) - Modern linting with flat config format
+- [eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y) - Accessibility best practices
+- [eslint-plugin-sonarjs](https://github.com/SonarSource/eslint-plugin-sonarjs) - Code quality and bug detection
 - [Prettier](https://prettier.io) - Consistent code formatting with Tailwind plugin
 - [Husky](https://typicode.github.io/husky/) - Git hooks for automated quality checks
 - [vite-plugin-checker](https://github.com/fi3ework/vite-plugin-checker) - Real-time TypeScript & ESLint feedback
