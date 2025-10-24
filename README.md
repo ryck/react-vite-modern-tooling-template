@@ -67,7 +67,23 @@ This project uses many tools and demonstrates modern React development patterns:
 
 ### Prerequisites
 
-This project uses [pnpm](https://pnpm.io) as the package manager. Install it globally if you haven't already:
+**Node.js:** This project requires Node.js version 22.12.0 or higher (latest LTS).
+
+Check your Node version:
+
+```bash
+node --version
+```
+
+If you need to install or update Node.js:
+
+- **Using [nvm](https://github.com/nvm-sh/nvm):** `nvm install 22` (recommended)
+- **Using [fnm](https://github.com/Schniz/fnm):** `fnm install 22`
+- **Direct download:** [nodejs.org](https://nodejs.org)
+
+The project includes a `.nvmrc` file for automatic version switching with nvm/fnm.
+
+**pnpm:** This project uses [pnpm](https://pnpm.io) as the package manager. Install it globally if you haven't already:
 
 **Using npm (recommended):**
 
