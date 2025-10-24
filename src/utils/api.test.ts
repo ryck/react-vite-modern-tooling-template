@@ -3,7 +3,7 @@ import { describe, it, expect, vi } from 'vitest'
 import { fetchData } from './api'
 
 // Mock fetch
-global.fetch = vi.fn()
+globalThis.fetch = vi.fn()
 
 describe('fetchData', () => {
   it('should fetch data successfully', async () => {
