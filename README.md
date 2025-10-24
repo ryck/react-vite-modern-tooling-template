@@ -34,6 +34,7 @@ This project uses many tools and demonstrates modern React development patterns:
 - [eslint-plugin-sonarjs](https://github.com/SonarSource/eslint-plugin-sonarjs) - Code quality and bug detection
 - [Prettier](https://prettier.io) - Consistent code formatting with Tailwind plugin
 - [Husky](https://typicode.github.io/husky/) - Git hooks for automated quality checks
+- [lint-staged](https://github.com/okonet/lint-staged) - Run linters on staged files only
 - [vite-plugin-checker](https://github.com/fi3ework/vite-plugin-checker) - Real-time TypeScript & ESLint feedback
 - [vite-plugin-inspect](https://github.com/antfu/vite-plugin-inspect) - Build process visualization
 - **Import ordering** - Automatic import organization
@@ -156,7 +157,7 @@ pnpm test:e2e:mobile   # Test mobile devices (Chrome & Safari)
 
 ## Git Hooks
 
-This project uses [Husky](https://typicode.github.io/husky/) to run automated quality checks at key points in the Git workflow:
+This project uses [Husky](https://typicode.github.io/husky/) and [lint-staged](https://github.com/okonet/lint-staged) to run automated quality checks at key points in the Git workflow:
 
 ### Pre-commit Hook
 
@@ -164,11 +165,17 @@ Runs automatically before each commit to ensure code quality:
 
 ```bash
 # Triggered on: git commit
-🔍 TypeScript type checking
-🔧 ESLint code linting
-💅 Prettier formatting check
+� Lint-staged - Fast linting/formatting of changed files only
+�🔍 TypeScript type checking
 🧪 Unit test execution
 ```
+
+**What is lint-staged?**
+
+- Only lints and formats **files you changed** (not the entire codebase)
+- Automatically fixes issues when possible
+- Much faster than checking all files
+- Configured in `lint-staged.config.ts`
 
 ### Pre-push Hook
 
