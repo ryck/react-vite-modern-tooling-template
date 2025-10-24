@@ -27,6 +27,6 @@ describe('<App />', () => {
   it('should show loading state initially', () => {
     render(<App />)
 
-    expect(screen.getByText('Loading...')).toBeInTheDocument()
+    expect(screen.getByText('Loading posts...')).toBeInTheDocument()
   })
 })

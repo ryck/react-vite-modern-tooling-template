@@ -31,11 +31,13 @@ This project uses many tools and demonstrates modern React development patterns:
 
 - [ESLint 9](https://eslint.org) - Modern linting with flat config format
 - [Prettier](https://prettier.io) - Consistent code formatting with Tailwind plugin
+- [Husky](https://typicode.github.io/husky/) - Git hooks for automated quality checks
 - **Import ordering** - Automatic import organization
 - **Path aliases** - Clean imports using `@/` syntax
 - **Type checking** - Strict TypeScript configuration
 - **TypeScript configs** - All configuration files use TypeScript for type safety
-- **Pre-commit hooks** - Code quality enforcement
+- **Conventional commits** - Enforced commit message format
+- **Pre-commit validation** - Automated linting, formatting, and testing
 
 ### Package Management
 
@@ -148,6 +150,70 @@ pnpm test:e2e:desktop  # Test all desktop browsers
 pnpm test:e2e:mobile   # Test mobile devices (Chrome & Safari)
 ```
 
+## Git Hooks
+
+This project uses [Husky](https://typicode.github.io/husky/) to run automated quality checks at key points in the Git workflow:
+
+### Pre-commit Hook
+
+Runs automatically before each commit to ensure code quality:
+
+```bash
+# Triggered on: git commit
+🔍 TypeScript type checking
+🔧 ESLint code linting
+💅 Prettier formatting check
+🧪 Unit test execution
+```
+
+### Pre-push Hook
+
+Runs comprehensive checks before pushing to remote:
+
+```bash
+# Triggered on: git push
+🔍 Full validation pipeline (typecheck + lint + tests)
+🎭 E2E tests on desktop browsers
+```
+
+### Commit Message Validation
+
+Enforces [Conventional Commits](https://www.conventionalcommits.org/) format:
+
+```bash
+# Valid formats:
+feat: add new component
+fix(api): resolve timeout issue
+docs: update README
+style: improve button styling
+refactor: optimize API calls
+test: add component tests
+chore: update dependencies
+
+# Invalid format will be rejected:
+❌ "fixed bug"           # Missing type
+❌ "feat add feature"    # Missing colon
+❌ "FEAT: new feature"   # Incorrect case
+```
+
+### Benefits
+
+- **Prevent broken code** from being committed
+- **Maintain consistent** code quality standards
+- **Automate repetitive** quality checks
+- **Enforce team conventions** for commit messages
+- **Catch issues early** before they reach CI/CD
+
+### Bypassing Hooks (Use Sparingly)
+
+```bash
+# Skip pre-commit hooks (not recommended)
+git commit --no-verify
+
+# Skip pre-push hooks (not recommended)
+git push --no-verify
+```
+
 ### Build
 
 Build for production:
@@ -202,6 +268,12 @@ All configuration files use TypeScript extensions for better type safety and IDE
 - `vite.config.ts` - Vite build configuration
 - `tailwind.config.ts` - Tailwind CSS configuration with type safety
 - `tsconfig.json` - TypeScript configuration with path aliases
+
+### Git Hooks
+
+- `.husky/pre-commit` - Pre-commit quality checks (lint, format, test)
+- `.husky/pre-push` - Pre-push validation and E2E tests
+- `.husky/commit-msg` - Conventional commit message validation
 
 ## License
 

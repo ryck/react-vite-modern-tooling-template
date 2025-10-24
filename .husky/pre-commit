@@ -1,0 +1,20 @@
+# Run linting and formatting checks
+echo "🔍 Running pre-commit checks..."
+
+# Check TypeScript types
+echo "📋 Checking TypeScript types..."
+pnpm typecheck || exit 1
+
+# Run ESLint
+echo "🔧 Running ESLint..."
+pnpm lint || exit 1
+
+# Run Prettier formatting check
+echo "💅 Checking code formatting..."
+pnpm format:check || exit 1
+
+# Run unit tests
+echo "🧪 Running unit tests..."
+pnpm test || exit 1
+
+echo "✅ Pre-commit checks passed!"
