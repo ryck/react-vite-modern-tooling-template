@@ -10,8 +10,8 @@ This project uses many tools and demonstrates modern React development patterns:
 
 - [Vite](https://vitejs.dev) v7+ - Lightning-fast build tool with HMR
 - [React](https://reactjs.org) v19 - Latest React with concurrent features
+- [React Compiler](https://react.dev/learn/react-compiler) - Automatic memoization and optimization
 - [TypeScript](https://www.typescriptlang.org) v5+ - Advanced type safety and IntelliSense
-- [SWC](https://swc.rs/) - Super-fast TypeScript/JavaScript compiler
 
 ### Testing Suite
 
@@ -32,6 +32,8 @@ This project uses many tools and demonstrates modern React development patterns:
 - [ESLint 9](https://eslint.org) - Modern linting with flat config format
 - [Prettier](https://prettier.io) - Consistent code formatting with Tailwind plugin
 - [Husky](https://typicode.github.io/husky/) - Git hooks for automated quality checks
+- [vite-plugin-checker](https://github.com/fi3ework/vite-plugin-checker) - Real-time TypeScript & ESLint feedback
+- [vite-plugin-inspect](https://github.com/antfu/vite-plugin-inspect) - Build process visualization
 - **Import ordering** - Automatic import organization
 - **Path aliases** - Clean imports using `@/` syntax
 - **Type checking** - Strict TypeScript configuration
